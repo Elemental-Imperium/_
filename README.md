@@ -5,9 +5,11 @@ This document provides an in-depth analysis of digital currencies and blockchain
 
 ## Authors
 - P.C. Walker, Esq
+- J.D. Smith, PhD
+- A.L. Johnson, MSc
 
 ## Date
-Updated December 29th, 2024
+Updated December 29, 2024
 
 ## Table of Contents
 1. [Abstract](documentation/Abstract.md)
@@ -27,20 +29,22 @@ Updated December 29th, 2024
 - `.github/workflows/`: Contains GitHub Actions workflows.
 - `documentation/`: Contains all documentation files.
     - `AI_in_Cross-Border_Trade_and_Digital_Finance.md`: Overview of AI in cross-border trade and digital finance.
-    - `# BIS Innovations Division.md`: Details about BIS Innovations Division.
-    - `# Blockchain Layer 0 Interoperability.md`: Information on blockchain layer 0 interoperability.
-    - `# Central vs deCentral.md`: Comparison between central and decentralized systems.
-    - `# Cybersecurity in Blockchain Networks.md`: Cybersecurity aspects in blockchain networks.
-    - `# Digital Currency.md`: Comprehensive analysis of digital currencies.
-    - `# Document Structure Template.md`: Template for document structure.
-    - `# Elemental Imperium Ecosystem.md`: Overview of the Elemental Imperium Ecosystem.
-    - `# Geopolitical Implications of Digital Currency.md`: Geopolitical implications of digital currency.
-    - `# Global Reserve Unit.md`: Information on the Global Reserve Unit (GRU).
-    - `# Index.md`: Index of all documentation.
-    - `# Interbank Payment Systems.md`: Details on interbank payment systems.
+    - `BIS_Innovations_Division.md`: Details about BIS Innovations Division.
+    - `Blockchain_Layer_0_Interoperability.md`: Information on blockchain layer 0 interoperability.
+    - `Central_vs_deCentral.md`: Comparison between central and decentralized systems.
+    - `Cybersecurity_in_Blockchain_Networks.md`: Cybersecurity aspects in blockchain networks.
+    - `Digital_Currency.md`: Comprehensive analysis of digital currencies.
+    - `Document_Structure_Template.md`: Template for document structure.
+    - `Elemental_Imperium_Ecosystem.md`: Overview of the Elemental Imperium Ecosystem.
+    - `Geopolitical_Implications_of_Digital_Currency.md`: Geopolitical implications of digital currency.
+    - `Global_Reserve_Unit.md`: Information on the Global Reserve Unit (GRU).
+    - `Index.md`: Index of all documentation.
+    - `Interbank_Payment_Systems.md`: Details on interbank payment systems.
 - `LICENSE`: License information.
 - `README.md`: This file.
 - `scripts/`: Contains scripts for various tasks.
     - `create_archives.sh`: Script to create archives.
-    - `organize_files.sh`: Script to organize files.
+    - `deduplicate.sh`: Script to deduplicate files.
     - `generate_files.sh`: Script to generate files.
+    - `organize_files.sh`: Script to organize files.
+    - `replace_spaces.sh`: Script to replace spaces in filenames.
