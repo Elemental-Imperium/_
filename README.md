@@ -1,6 +1,4 @@
-# README.md
-
-## Comprehensive Analysis of Digital Currencies and Blockchain Technologies
+# Comprehensive Analysis of Digital Currencies and Blockchain Technologies
 
 ## Abstract
 This document provides an in-depth analysis of digital currencies and blockchain technologies, covering their technical, legal, economic, and geopolitical aspects. It includes case studies, future directions, and recommendations for continuous development and adoption.
