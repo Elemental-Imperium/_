@@ -1,18 +1,50 @@
 #!/bin/bash
 
-# Step 1: Create the dev_write directory
-mkdir -p dev_write
+# Set the base directory
+BASE_DIR="/path/to/project/root"
+LOG_FILE="$BASE_DIR/generate_files.log"
 
-# Step 2: Create files with dummy content
-echo "ISO 20022 standard content placeholder" > dev_write/ISO_20022.pdf
-echo "ISO TC 307 standard content placeholder" > dev_write/ISO_TC_307.pdf
-echo "ISO 22301 standard content placeholder" > dev_write/ISO_22301.pdf
-echo "BIS CBDC overview content placeholder" > dev_write/CBDC_Overview.pdf
-echo "RippleNet case study content placeholder" > dev_write/RippleNet_Case_Study.pdf
-echo "Elemental Imperium Governance Framework placeholder" > dev_write/Governance_Framework.md
-echo "Tokenomics M00, M0, M1 content placeholder" > dev_write/Tokenomics_M00_M0_M1.md
-echo "Blockchain Layer 0 Interoperability content placeholder" > dev_write/Layer_0_Interoperability.md
-echo "AI Risk Management in Trade placeholder" > dev_write/Risk_Management_with_AI.md
-echo "Interactive Repository Index placeholder" > dev_write/Reference_Archive_Index.pdf
+# Define required files
+declare -A REQUIRED_FILES=(
+  ["README.md"]="Default README with project details."
+  ["LICENSE"]="MIT License."
+  ["CODE_OF_CONDUCT.md"]="Community guidelines."
+  ["CONTRIBUTING.md"]="Contribution instructions."
+  ["SECURITY.md"]="Security reporting process."
+  [".github/workflows/ci.yml"]="CI/CD workflow setup."
+  ["CHANGELOG.md"]="Changelog for tracking updates."
+)
 
-echo "All files created in dev_write directory."
+# Function to log messages with timestamp
+log_message() {
+  local MESSAGE=$1
+  echo "$(date '+%Y-%m-%d %H:%M:%S') - $MESSAGE" | tee -a "$LOG_FILE"
+}
+
+# Validate directory structure
+if [[ ! -d "$BASE_DIR/.github/workflows" ]]; then
+  log_message "Creating .github/workflows directory..."
+  mkdir -p "$BASE_DIR/.github/workflows" || { log_message "Failed to create .github/workflows directory"; exit 1; }
+fi
+
+# Iterate through files and create missing ones
+for FILE in "${!REQUIRED_FILES[@]}"; do
+  if [[ ! -f "$BASE_DIR/$FILE" ]]; then
+    log_message "Creating $FILE..."
+    echo "${REQUIRED_FILES[$FILE]}" > "$BASE_DIR/$FILE" || { log_message "Failed to create $FILE"; exit 1; }
+  else
+    log_message "$FILE already exists. Skipping..."
+  fi
+done
+
+log_message "File generation and validation completed."
+
+# Summary of actions taken
+log_message "Summary of actions:"
+for FILE in "${!REQUIRED_FILES[@]}"; do
+  if [[ -f "$BASE_DIR/$FILE" ]]; then
+    log_message "$FILE exists."
+  else
+    log_message "$FILE does not exist."
+  fi
+done
